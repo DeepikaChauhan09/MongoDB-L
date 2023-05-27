@@ -1,0 +1,46 @@
+
+🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
+HOW TO ESTABLISGH CONNECTION BETN NODEJS AND MONGODB, WHY NEED ASYNCHRONOUS FUNCTION , WHY CANT DO ALL CRUD OPERATIONS LIKE INSERT, READ, UPDATE IN 1 SAME FUNCTION DEFINATION, WHY NEED DIFFERENT FILE(.JS) TO WRITE CODE FOR CRUD OPERATION, ND CONNECTION ESTABLISHMENT
+
+
+
+>>>> 🌲 🌲 🌲 🌲 🌲🌲 🌲 🌲 🌲 🌲
+for connecting Mongo Db with  nodeJS, the connection takes time 
+
+
+>>>> 🌲 🌲 🌲 🌲 🌲🌲 🌲 🌲 🌲 🌲
+HOW TO ESTABLISH CONNECT BETN BOTH ND WHY SEPARATE ASYNCHRONOUS FUNCTION NEEDED? 
+ 
+
+There are some fixed lines of codes for connecting Mango db and Express js in that code .I thought that if i won't make any function and use all the codes like connecting with dB acting on d, connecting with database and connecting with the collections without any function definition 
+
+But while connecting mango db and Express JS the connection the .connect() method take time so the line in which I am connecting I am using dot connect method at that line . that line is taking time so the very next line of that line that is result means connection with database and collection,  is complicated because previous line connection is not completed yet
+
+So humko isme  asynchronous function to use karna hi hoga. so that Aage wale steps Jo kam time me ho rahe hain vah pahle ho jaaye and jab Jo time de raha hai operation like connection mein time Lag Raha Hai vah Jab Hue vah bad Mein execute Ho Jaaye so for that Humko  function defined karna padega. So asynchronous function ko use karne ke liye function alag se define karna padta hai. so now it is clear that humko Ek function to define karna hi hoga so so these 4--5 things will come underthat function definition  
+
+
+>>>> 🌲 🌲 🌲 🌲 🌲🌲 🌲 🌲 🌲 🌲
+WHY SEPARATE FUNCTIONS NEEDED FOR DIFEEREN TOPERATIONS LIKE ADD, DELETE UPDATE==>>
+ now in this function we will write code for reading the data . we can't write inserting operation in the same function as this will not work or this will be complicated .so for insert ,  update and for delete we have to make separate functions which are asynchronous in nature 
+
+
+
+for functions of insertion, updation and delete we have to establish the connection again because we saw that to establish a collection we have to use in function and the connection which we established while fetchning/getting/reading  the data,,, cannot be used in the function which we will be making for insertion or updating .and we know that this connection establishment take time so every time while inserting deleting the operation becomes time consuming.  and we don't want that. so we create one file in which we established the connection by  using a asynchronous method definition and we will be using that method basically we will call that method in every method where insertion or decision will be performing we will call that connection method so the connection is established one time only we are using 
+
+
+Now , till now,, we have understood how we established connection why we need separate function or separate file for establishing a connection and why we will make different functions for insertion division and updation why we are not using all operations delete update in the same method now we will see why create separate file for each method instead of writing each every method in the same so we will be using one file for delete and another dot JS file for update and another dot JS file for add 
+
+
+
+>>>> 🌲 🌲 🌲 🌲 🌲🌲 🌲 🌲 🌲 🌲
+WHY SEPAREATE FILE(.JS) IS NEEDED TO PERFORM DIFFERENT FUNCTIONS LIKE INSERT, UPDATE ,FETCH, ND FOR FUNCTION OF CONNECTION ESTABLISHMENT 
+
+So first for searching data simple we can use find method and when we will save this method and again and again will be saving control plus as well we will do it won't affect that much means it will not face the data it will face the data again and again okay no for add when we code for add option and we will insert supposed one or two new fields or documents we have added now when we will save that file again and again that data will be again and again inserted into the DB means the same data will insert and times when we save the file and time so there is different Court a little bit changes in the court for add operation that is insert so that's why I will make another file of it and that file will define connection before the at method so that when add method is calling again and again it will not disturb again and again connection it will establish only one time 
+
+
+Similarly for update and delete it find to create another files order separate files and same happens in every cases when we control + save feel do it will run the file again and again I guess this happens in update also but I am just 
+
+So that's it reason why we are making separate files and big and for that separate files we will be installing we will be importing mango db and mongoose and also the file from which we are using the data in that file will export and import operation will come
+
+
+
